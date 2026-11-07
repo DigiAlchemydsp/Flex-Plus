@@ -17,7 +17,7 @@ SHA-256:
 
 ```
 59B4655FDD53750FEE338C579A8391CA0CEB10827A16572CAD976150B918BBD2  flexbus-1.0-digitone-flexbus.elemod
-0A169EF4EE0751BB68CDDEDDEE51A19EEECCBDCEC767DF4424CD3AFD00FA9AA5  flexbus-dt-1.0-digitakt-flexbus.elemod
+9E9FA4C5C3BE54DEC5D915E0A7AC19DBF704F2C24CA2743992836137FC442FF6  flexbus-dt-1.0-digitakt-flexbus.elemod
 ```
 
 ## What it does
@@ -27,7 +27,8 @@ SHA-256:
 - **TUNE:** -24..+24 semitones, two-tap delay-sweep shifter.
 - **GAIN** and **MIX** (shifter dry/wet).
 - **Scope:** a low-CPU oscilloscope on the page (full-width on the Digitone,
-  the A-D top row of the Digitakt SRC page, display only).
+  the A-D top row of the Digitakt SRC page, display only). The stock empty
+  B-D cells are suppressed so they do not overlay the scope.
 - The selected input replaces the track's sample/voice and then goes through
   the track's filter, AMP envelope, level and FX as usual. One bus per track;
   trigger it to open it; selecting itself is silence.
