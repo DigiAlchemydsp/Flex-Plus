@@ -1,12 +1,12 @@
-# FlexBus 1.0
+# Flex+ 1.0
 
-**FlexBus** routes the Elektron Digitone mk1 / Keys and Digitakt mk1 audio
+**Flex+** routes the Elektron Digitone mk1 / Keys and Digitakt mk1 audio
 inputs—or their internal tracks—into a track, with a low-CPU pitch shifter and
 an oscilloscope on the machine page.
 
-![FlexBus SYN1: T1 routed, TUNE +7](flexbus-syn1.png)
+![Flex+ SYN1: T1 routed, TUNE +7](flexbus-syn1.png)
 
-*A FlexBus SYN1 page: INPUT T1, TUNE +7, the routed track in the scope. The
+*A Flex+ SYN1 page: INPUT T1, TUNE +7, the routed track in the scope. The
 panel is rendered from the machine's layout; the status bar and left rail are
 from a digiemu stock-page capture; the waveform is an example.*
 
@@ -27,7 +27,7 @@ send it with Elektron Transfer.
 1. In elekloader, select the matching stock OS file (Digitakt 1.54 or
    Digitone 1.44).
 2. Install the core and companion `.elemod` files for the device, then the
-   matching FlexBus `.elemod`.
+   matching Flex+ `.elemod`.
 3. Tick them, check for no conflicts, build the `.syx`, and send it with
    Transfer.
 4. Keep the build to your own unit: it contains Elektron's firmware.
@@ -54,27 +54,24 @@ current source over `EXT`/`TRK`.
 
 | knob | |
 |---|---|
-| A **TUNE** | -24..+24 semitones |
-| B | blank |
-| C **SCOPE** | the input's oscilloscope |
-| D | blank; no sample browser |
-| E **INPUT** | L, R, L+R, T1..T8 |
-| F **MIX** | dry/wet, 63 = full wet |
-| G | blank |
-| H **GAIN** | 0..127, 64 = unity |
+| A-D | **SCOPE**: display only, across the top row |
+| E **TUNE** | -24..+24 semitones |
+| F **GAIN** | 0..127, 64 = unity |
+| G **MIX** | dry/wet, 127 = full wet |
+| H **INPUT** | L, R, L+R, T1..T8 |
 
 ## Notes
 
 - One bus per track. The track must be triggered; its AMP envelope gates the
-  bus. Selecting the FlexBus track itself is silence (no feedback loop).
+  bus. Selecting the Flex+ track itself is silence (no feedback loop).
 - Internal tracks are tapped **post-machine, pre-filter**, one block late: the
-  source track's own FILT/AMP/FX are not in the tap; the FlexBus track's chain
+  source track's own FILT/AMP/FX are not in the tap; the Flex+ track's chain
   is.
 - The pitch shifter is a two-tap delay sweep with smoothstep fades and a short
   correlation at the splice. It measured -24..+24 at 1 kHz within 0.8% in the
   m68k bench; one shifted bus costs about 5,100 instructions/block.
 - Digitone: the status bar and left rail in the image are a stock digiemu
-  capture; the FlexBus content is a panel rendering. The waveform is an
+  capture; the Flex+ content is a panel rendering. The waveform is an
   example.
 - **Status:** Digitone 1.0 is hardware-tested by the user. Digitakt 1.0 is
   built, linted and bench-tested; not yet hardware-tested.

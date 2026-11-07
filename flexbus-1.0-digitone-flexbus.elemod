@@ -2,8 +2,8 @@
  "elemod": 2,
  "id": "flexbus",
  "version": "1.0",
- "title": "FLEXBUS (Digitone machine)",
- "description": "FlexBus, a Digitone mk1 machine that routes the external audio inputs (L, R or L+R) into a voice. The chosen input is pitch shifted -24..+24 semitones with the low-CPU Tone+FX SHFT two-grain shifter, then enters the track's filter, mixer, effects and AMP envelope as FM does. The SYN1 first page is a stock-like panel: four round controls in the bottom row (TUNE, GAIN, MIX, INPUT, with INPUT shown as two rows of text) and a small low-CPU oscilloscope above them, ported from DigiScope. One bus per track, last-note priority. Needs core-dn1 4.0 and machines 0.2, on OS 1.44.",
+ "title": "Flex+ (Digitone machine)",
+ "description": "Flex+, a Digitone mk1 machine that routes the external audio inputs (L, R or L+R) into a voice. The chosen input is pitch shifted -24..+24 semitones with the low-CPU Tone+FX SHFT two-grain shifter, then enters the track's filter, mixer, effects and AMP envelope as FM does. The SYN1 first page is a stock-like panel: four round controls in the bottom row (TUNE, GAIN, MIX, INPUT, with INPUT shown as two rows of text) and a small low-CPU oscilloscope above them, ported from DigiScope. One bus per track, last-note priority. Needs core-dn1 4.0 and machines 0.2, on OS 1.44.",
  "category": "Sound",
  "author": "x2k",
  "license": "GPL-2.0-or-later",
@@ -18,7 +18,7 @@
  "sections": {
   ".run": {
    "align": 16,
-   "len": 12095,
+   "len": 12093,
    "parts": [
     [
      "stock",
@@ -873,7 +873,7 @@
     ],
     [
      "hex",
-     "00000000000000000000000000000c8c18f9252830fb3c56471c51335a8262f16a6d70e276417a7c7d897f617fff7f617d897a7c764170e26a6d62f15a825133471c3c5630fb252818f90c8c0000f374e707dad8cf05c3aab8e4aecda57e9d0f95938f1e89bf85848277809f8001809f8277858489bf8f1e95939d0fa57eaecdb8e4c3aacf05dad8e707f374464c45584255530054554e45004741494e004d495800494e505554004c0052004c2b52005431005432005433005434004558540054524b0025730054554e45004741494e004d495800494e50555400"
+     "00000000000000000000000000000c8c18f9252830fb3c56471c51335a8262f16a6d70e276417a7c7d897f617fff7f617d897a7c764170e26a6d62f15a825133471c3c5630fb252818f90c8c0000f374e707dad8cf05c3aab8e4aecda57e9d0f95938f1e89bf85848277809f8001809f8277858489bf8f1e95939d0fa57eaecdb8e4c3aacf05dad8e707f374464c45582b0054554e45004741494e004d495800494e505554004c0052004c2b52005431005432005433005434004558540054524b0025730054554e45004741494e004d495800494e50555400"
     ]
    ]
   },
@@ -1416,7 +1416,7 @@
    7604,
    "abs32",
    "sec:.run",
-   12024
+   12022
   ],
   [
    ".run",
@@ -1430,7 +1430,7 @@
    7616,
    "abs32",
    "sec:.run",
-   12029
+   12027
   ],
   [
    ".run",
@@ -1444,7 +1444,7 @@
    7628,
    "abs32",
    "sec:.run",
-   12034
+   12032
   ],
   [
    ".run",
@@ -1458,7 +1458,7 @@
    7640,
    "abs32",
    "sec:.run",
-   12038
+   12036
   ],
   [
    ".run",
@@ -1472,49 +1472,49 @@
    7748,
    "abs32",
    "sec:.run",
-   12044
+   12042
   ],
   [
    ".run",
    7752,
    "abs32",
    "sec:.run",
-   12046
+   12044
   ],
   [
    ".run",
    7756,
    "abs32",
    "sec:.run",
-   12048
+   12046
   ],
   [
    ".run",
    7760,
    "abs32",
    "sec:.run",
-   12052
+   12050
   ],
   [
    ".run",
    7764,
    "abs32",
    "sec:.run",
-   12055
+   12053
   ],
   [
    ".run",
    7768,
    "abs32",
    "sec:.run",
-   12058
+   12056
   ],
   [
    ".run",
    7772,
    "abs32",
    "sec:.run",
-   12061
+   12059
   ],
   [
    ".run",
@@ -2011,7 +2011,7 @@
    5456,
    "abs32",
    "sec:.run",
-   12068
+   12066
   ],
   [
    ".run",
@@ -2032,7 +2032,7 @@
    5948,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2060,7 +2060,7 @@
    6052,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2095,7 +2095,7 @@
    6322,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2116,14 +2116,14 @@
    6402,
    "abs32",
    "sec:.run",
-   12064
+   12062
   ],
   [
    ".run",
    6478,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2179,7 +2179,7 @@
    6980,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2214,7 +2214,7 @@
    7132,
    "abs32",
    "sec:.run",
-   12072
+   12070
   ],
   [
    ".run",
@@ -2249,28 +2249,28 @@
    11872,
    "abs32",
    "sec:.run",
-   12075
+   12073
   ],
   [
    ".run",
    11876,
    "abs32",
    "sec:.run",
-   12080
+   12078
   ],
   [
    ".run",
    11880,
    "abs32",
    "sec:.run",
-   12085
+   12083
   ],
   [
    ".run",
    11884,
    "abs32",
    "sec:.run",
-   12089
+   12087
   ]
  ],
  "sites": [],
@@ -2389,9 +2389,9 @@
  "conflicts": [],
  "build": {
   "sources": {
-   "engine.c": "21ea4fd6dbc83360acd1b1f461daa0ef5660a3f170de4d0c21282c9337c8ac11",
-   "flexbus.c": "9f87344ac52dcc3caa632261c19f8ec772adfbd82a6a7781497caea8daada659",
-   "overlay.c": "da80e8b1c98df8d8d0d7134e8d999c6e3aaf09a83ef199cfe2b209f6f792a660"
+   "engine.c": "004fe09468a6f9202753a2400c2b9a83a8e9624eb3a0675612a64da7a09ca7cb",
+   "flexbus.c": "303f80b8f4d199aaa343e5f1614aee9f53c97fd36d05bb74ffeb96ae8b1b9dad",
+   "overlay.c": "63754a03515b22a4ebccf1087753f273b2b660a4602e55e27be6e159cfab33d7"
   }
  },
  "signature": null
