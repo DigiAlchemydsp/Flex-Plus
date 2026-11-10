@@ -1,8 +1,8 @@
-# Flex+ 1.0
+# Flex+ 1.1
 
-Flex+ routes the Digitone and Digitakt audio inputs—or their internal
-tracks—into a track, with a low-CPU pitch shifter and an oscilloscope on the
-machine page.
+Flex+ routes the Digitone and Digitakt audio inputs, or their internal tracks,
+into a track, with a low-CPU pitch shifter and an oscilloscope on the machine
+page.
 
 ![Flex+ SYN1: T1 routed, TUNE +7](https://github.com/DigiAlchemydsp/Flex-Plus/raw/main/flexbus-syn1.png)
 
@@ -16,9 +16,26 @@ machine page.
 SHA-256:
 
 ```
-59B4655FDD53750FEE338C579A8391CA0CEB10827A16572CAD976150B918BBD2  flexbus-1.0-digitone-flexbus.elemod
-9E9FA4C5C3BE54DEC5D915E0A7AC19DBF704F2C24CA2743992836137FC442FF6  flexbus-dt-1.0-digitakt-flexbus.elemod
+38BAF8714F725AF8D74EC433469DCB8579812821421CD91FC1D2B61DAA05778F  flexbus-1.0-digitone-flexbus.elemod
+C5065BDED1CC8A824DDBA3A38B265485C164297ED993C595DFB0ABB1A31107CE  flexbus-dt-1.0-digitakt-flexbus.elemod
 ```
+
+Only the regular Flex+ elemods are published. The FAST AUDIO Digitakt
+prototype is not part of this release. The elemod filenames keep the machine
+revision `1.0`; this is the Flex+ `1.1` release.
+
+## Changes since 1.0
+
+- Internal-track tap moved to `ev_render_out`, **post-filter and post-AMP**.
+  A track selecting itself is silent.
+- Scope bars are taller and mirrored around DC 0, with full positive and
+  negative amplitude.
+- Scope capture always advances; when audio render stops, the UI tick
+  zero-fills the visible track so old samples scroll out.
+- Source-need mask skips internal copies when no Flex+ track uses them.
+- DSP and UI budget reduced; one shifted bus is about 4,246 instructions/block.
+- Flex+ has four playable parameters only: TUNE, GAIN, MIX, INPUT. Performance
+  gestures are not part of this release.
 
 ## What it does
 
@@ -26,9 +43,8 @@ SHA-256:
   Digitone, T1..T8 on the Digitakt).
 - **TUNE:** -24..+24 semitones, two-tap delay-sweep shifter.
 - **GAIN** and **MIX** (shifter dry/wet).
-- **Scope:** a low-CPU oscilloscope on the page (full-width on the Digitone,
-  the A-D top row of the Digitakt SRC page, display only). The stock empty
-  B-D cells are suppressed so they do not overlay the scope.
+- **Scope:** full-width on the Digitone, the A-D top row of the Digitakt SRC
+  page (display only).
 - The selected input replaces the track's sample/voice and then goes through
   the track's filter, AMP envelope, level and FX as usual. One bus per track;
   trigger it to open it; selecting itself is silence.
@@ -44,7 +60,7 @@ touched.
 
 ## Status
 
-Digitone 1.0 is hardware-tested by the user. Digitakt 1.0 is built, linted and
-bench-tested; not yet hardware-tested.
+Normal Flex+ Digitakt and Digitone builds are linted and bench-tested. The
+current scope revision still needs hardware verification.
 
 GPL-2.0-or-later. Unofficial; not affiliated with or endorsed by Elektron.

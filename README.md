@@ -1,8 +1,8 @@
-# Flex+ 1.0
+# Flex+ 1.1
 
 **Flex+** routes the Elektron Digitone mk1 / Keys and Digitakt mk1 audio
-inputs—or their internal tracks—into a track, with a low-CPU pitch shifter and
-an oscilloscope on the machine page.
+inputs, or their internal tracks, into a track, with a low-CPU pitch shifter
+and an oscilloscope on the machine page.
 
 ![Flex+ SYN1: T1 routed, TUNE +7](flexbus-syn1.png)
 
@@ -18,6 +18,10 @@ from a digiemu stock-page capture; the waveform is an example.*
 | Digitakt mk1, OS 1.54 | `flexbus-dt-1.0-digitakt-flexbus.elemod` | core 4.0 + machine-pages 1.1 |
 
 SHA-256 checksums are in `SHA256SUMS.txt`.
+
+The elemod filenames keep the machine revision `1.0`; this is the Flex+ `1.1`
+release. Only the regular Flex+ elemods are published here. The FAST AUDIO
+Digitakt prototype is not part of this release.
 
 ## Install
 
@@ -64,17 +68,20 @@ current source over `EXT`/`TRK`.
 
 - One bus per track. The track must be triggered; its AMP envelope gates the
   bus. Selecting the Flex+ track itself is silence (no feedback loop).
-- Internal tracks are tapped **post-machine, pre-filter**, one block late: the
-  source track's own FILT/AMP/FX are not in the tap; the Flex+ track's chain
-  is.
+- Internal tracks are tapped **post-filter, post-AMP**, at the end of the
+  render, one block late: the source track's FILT/AMP/FX are in the tap. A
+  track selecting itself is silent.
+- The scope draws bars mirrored around DC 0, so each bar uses the full positive
+  and negative height. Capture always advances; when audio render stops, the UI
+  tick writes zeros so old samples scroll out instead of freezing.
 - The pitch shifter is a two-tap delay sweep with smoothstep fades and a short
-  correlation at the splice. It measured -24..+24 at 1 kHz within 0.8% in the
-  m68k bench; one shifted bus costs about 5,100 instructions/block.
+  correlation at the splice. One shifted bus costs about 4,246
+  instructions/block in the m68k bench.
 - Digitone: the status bar and left rail in the image are a stock digiemu
   capture; the Flex+ content is a panel rendering. The waveform is an
   example.
-- **Status:** Digitone 1.0 is hardware-tested by the user. Digitakt 1.0 is
-  built, linted and bench-tested; not yet hardware-tested.
+- **Status:** normal Flex+ Digitakt and Digitone builds are linted and
+  bench-tested. The current scope revision still needs hardware verification.
 
 ## Licence
 
