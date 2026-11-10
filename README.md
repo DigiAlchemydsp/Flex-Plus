@@ -16,12 +16,15 @@ from a digiemu stock-page capture; the waveform is an example.*
 |---|---|---|
 | Digitone mk1 / Keys, OS 1.44 | `flexbus-1.0-digitone-flexbus.elemod` | core-dn1 4.0 + machines 0.2 |
 | Digitakt mk1, OS 1.54 | `flexbus-dt-1.0-digitakt-flexbus.elemod` | core 4.0 + machine-pages 1.1 |
+| Digitakt mk1, OS 1.54 FAST | `flexbus-dt-fast-1.0-digitakt-flexbus-fast.elemod` | core 4.0 + machine-pages 1.1 + digihealth 1.0 |
 
 SHA-256 checksums are in `SHA256SUMS.txt`.
 
 The elemod filenames keep the machine revision `1.0`; this is the Flex+ `1.1`
-release. Only the regular Flex+ elemods are published here. The FAST AUDIO
-Digitakt prototype is not part of this release.
+release. The Digitakt FAST AUDIO build is included as an optional variant.
+Install either the regular or the FAST Digitakt elemod, not both. The FAST
+build requires digihealth 1.0 and FAST AUDIO on; it falls back to the normal
+`.run` path until FAST AUDIO has copied its code.
 
 ## Install
 
@@ -74,6 +77,7 @@ current source over `EXT`/`TRK`.
 - The scope draws bars mirrored around DC 0, so each bar uses the full positive
   and negative height. Capture always advances; when audio render stops, the UI
   tick writes zeros so old samples scroll out instead of freezing.
+- The optional Digitakt FAST build puts the shifter hot loop in on-chip SRAM; the regular build is the safe default and the FAST build uses a `.run` fallback until FAST AUDIO is active.
 - The pitch shifter is a two-tap delay sweep with smoothstep fades and a short
   correlation at the splice. One shifted bus costs about 4,246
   instructions/block in the m68k bench.

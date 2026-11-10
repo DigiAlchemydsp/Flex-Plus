@@ -12,16 +12,20 @@ page.
 |---|---|---|
 | Digitone mk1 / Keys, OS 1.44 | `flexbus-1.0-digitone-flexbus.elemod` | core-dn1 4.0 + machines 0.2 |
 | Digitakt mk1, OS 1.54 | `flexbus-dt-1.0-digitakt-flexbus.elemod` | core 4.0 + machine-pages 1.1 |
+| Digitakt mk1, OS 1.54 FAST | `flexbus-dt-fast-1.0-digitakt-flexbus-fast.elemod` | core 4.0 + machine-pages 1.1 + digihealth 1.0 |
 
 SHA-256:
 
 ```
 38BAF8714F725AF8D74EC433469DCB8579812821421CD91FC1D2B61DAA05778F  flexbus-1.0-digitone-flexbus.elemod
 C5065BDED1CC8A824DDBA3A38B265485C164297ED993C595DFB0ABB1A31107CE  flexbus-dt-1.0-digitakt-flexbus.elemod
+CF597E4A5CA0FC7625B35828803F725DBCB1BF75FFCD255A26CD6AE95E6AD898  flexbus-dt-fast-1.0-digitakt-flexbus-fast.elemod
 ```
 
-Only the regular Flex+ elemods are published. The FAST AUDIO Digitakt
-prototype is not part of this release. The elemod filenames keep the machine
+The Digitakt FAST AUDIO build is included as an optional variant. Install
+either the regular or the FAST Digitakt elemod, not both. It requires
+digihealth 1.0 and FAST AUDIO on, and falls back to the normal `.run` path
+until FAST AUDIO has copied its code. The elemod filenames keep the machine
 revision `1.0`; this is the Flex+ `1.1` release.
 
 ## Changes since 1.0
@@ -34,6 +38,8 @@ revision `1.0`; this is the Flex+ `1.1` release.
   zero-fills the visible track so old samples scroll out.
 - Source-need mask skips internal copies when no Flex+ track uses them.
 - DSP and UI budget reduced; one shifted bus is about 4,246 instructions/block.
+- Optional Digitakt FAST AUDIO build included; the regular build remains the
+  default and the FAST build is safe with FAST AUDIO off.
 - Flex+ has four playable parameters only: TUNE, GAIN, MIX, INPUT. Performance
   gestures are not part of this release.
 
